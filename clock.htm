@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Document</title>
+ <style>
+    #clo{
+        width: 300px;
+        height: 300px;
+        border: 5px solid black;
+        border-radius: 100%;
+        background-image: url(./www.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        top: 93px;
+    }
+    #day{
+        color: red;
+        position: relative;
+        top: 33px;
+        
+    }
+    #date{
+        color: blue;
+        position: relative;
+        top: 53px;
+        
+    }
+    #time{
+        position: relative;
+        top: 73px;
+
+    }
+   
+   
+ </style>
+</head>
+<body id="bd" onload="fun()">
+   <center>
+    <div id="clo">
+    <h1 id="day"></h1>
+    <h2 id="date"></h2>
+    <h3 id="time"></h3>
+</div>
+
+   </center>
+    
+   <script>
+    function fun()
+    {
+        var timezone=new Date()
+        var dy=timezone.getDay()
+        switch(dy)
+        {
+            case 0:dy="SUNDAY"
+            document.getElementById('bd').style.backgroundImage="url(./b\ c.webp)"
+            document.getElementById('bd').style.backgroundRepeat="no-repeat"
+            document.getElementById('bd').style.backgroundSize="100% 900px"
+            break;
+            case 1:dy="MONDAY"
+            document.getElementById('bd').style.backgroundImage="url(./rm422-073.jpg)"
+            document.getElementById('bd').style.backgroundRepeat="no-repeat"
+            document.getElementById('bd').style.backgroundSize="100% 900px"
+            break;
+            case 2:dy="TUESDAY"
+            document.getElementById('bd').style.backgroundImage="url(SAT.jpg)"
+            document.getElementById('bd').style.backgroundRepeat="no-repeat"
+            document.getElementById('bd').style.backgroundSize="100% 900px"
+            break;
+            case 3:dy="WEDNESDAY"
+            document.getElementById('bd').style.backgroundImage="url(FRI.jpg)"
+            document.getElementById('bd').style.backgroundRepeat="no-repeat"
+            document.getElementById('bd').style.backgroundSize="100% 900px"
+            break;
+            case 4:dy="THURSDAY"
+            document.getElementById('bd').style.backgroundImage="url(FRI.jpg)"
+            document.getElementById('bd').style.backgroundRepeat="no-repeat"
+            document.getElementById('bd').style.backgroundSize="100% 900px"
+            break;
+            case 5:dy="FRIDAY"
+            document.getElementById('bd').style.backgroundImage="url(SAT.jpg)"
+            document.getElementById('bd').style.backgroundRepeat="no-repeat"
+            document.getElementById('bd').style.backgroundSize="100% 900px"
+            break;
+            case 6:dy="SATURDAY"
+            document.getElementById('bd').style.backgroundImage="url(SUND.jpg)"
+            document.getElementById('bd').style.backgroundRepeat="no-repeat"
+            document.getElementById('bd').style.backgroundSize="100% 900px"
+            break;
+        }
+        document.getElementById('day').innerHTML=dy
+        var dd=timezone.getDate()
+        var mm=timezone.getMonth()
+        var yy=timezone.getFullYear()
+        switch(mm)
+        {
+            case 0:mm="JAN"
+            break;
+            case 1:mm="FEB"
+            break;
+            case 2:mm="MAR"
+            break;
+            case 4:mm="APR"
+            break;
+            case 5:mm="MAY"
+            break;
+            case 6:mm="JUN"
+            break;
+            case 7:mm="JUL"
+            break;
+            case 8:mm="AUG"
+            break;
+            case 9:mm="SEP"
+            break;
+            case 10:mm="OCT"
+            break;
+            case 11:mm="NOV"
+            break;
+            case 12:mm="DEC"
+            break;
+        }
+        var mm=dd+"/"+mm+"/"+yy
+        document.getElementById('date').innerHTML=mm
+        var hh=timezone.getHours()
+        var mm=timezone.getMinutes()
+        var ss=timezone.getSeconds()
+        var ampm=""
+        if(hh>12)
+        {
+            ampm-="PM"
+        if(hh>12)
+            {
+                hh>12
+            }
+        else
+        {
+            ampm-="AM"
+        }
+       }
+         var samay=hh+":"+mm+":"+ss+":"+ampm
+        document.getElementById('time').innerHTML=samay
+        setTimeout(function(){fun(),1000})
+          }
+   </script>
+</body>
+</html>
